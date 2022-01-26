@@ -29,7 +29,19 @@ El código que voy a ejecutar ahora, es para resolver el problema en siguiente s
 
 ```{r}
 Chile<-plants %>% dplyr::filter(country=="Chile") %>% dplyr::select(binomial_name,country, red_list_category)
+
+Chile
 ```
 
+#Resumen de especies por país
+
+```{r}
+Resumen<-plants %>% 
+  dplyr::filter(continent=="South America") %>% 
+  group_by(country) %>% 
+  summarise(n_species = n())
+
+Resumen
+```
 
 
